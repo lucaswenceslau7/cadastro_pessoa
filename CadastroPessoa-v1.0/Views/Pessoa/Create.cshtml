@@ -1,0 +1,60 @@
+﻿@model CadastroPessoa_v1._0.Models.Pessoa
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Criar Cadastro</h1>
+
+<h4>Pessoa</h4>
+<hr />
+<div class="row">
+    <div class="col-md-6 col-lg-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nome" class="control-label"></label>
+                <input asp-for="nome" class="form-control" maxlength="50" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+                <div class="tooltip-text">Informe seu nome<br />Máx. 50 caracteres</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefone" class="control-label"></label>
+                <input asp-for="telefone" class="form-control" maxlength="15" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+                <div class="tooltip-text">Informe o seu telefone<br />Ex.: (xx) xxxxx-xxxx</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="bairro" class="control-label"></label>
+                <input asp-for="bairro" class="form-control" maxlength="20" />
+                <span asp-validation-for="bairro" class="text-danger"></span>
+                <div class="tooltip-text">Informe o seu bairro<br />Máx. 20 caracteres</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="cidade" class="control-label"></label>
+                <input asp-for="cidade" class="form-control" maxlength="30" />
+                <span asp-validation-for="cidade" class="text-danger"></span>
+                <div class="tooltip-text">Informe a sua cidade<br />Máx. 30 caracteres</div>
+            </div>
+            <div class="form-group">
+                <label asp-for="estado" class="control-label"></label>
+                <input asp-for="estado" class="form-control" maxlength="15" />
+                <span asp-validation-for="estado" class="text-danger"></span>
+                <div class="tooltip-text">Informe o seu estado<br />Máx. 15 caracteres</div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Criar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Voltar</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

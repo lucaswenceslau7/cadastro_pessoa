@@ -1,0 +1,59 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px; /* Adiciona algum espaço entre os campos, se necessário */
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 220px; /* Ajuste o tamanho conforme necessário */
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 5px; /* Ajuste o padding conforme necessário */
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Posiciona o tooltip acima do campo de entrada */
+    left: 100%;
+    margin-left: -80px; /* Centraliza o tooltip */
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    white-space: pre-wrap; /* Permite quebras de linha */
+    text-align: center; /* Alinha o texto à esquerda */
+}
+
+.tooltip-container input:hover + .tooltip-text,
+.tooltip-container:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
