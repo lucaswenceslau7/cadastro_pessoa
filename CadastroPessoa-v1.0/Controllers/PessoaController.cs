@@ -7,15 +7,18 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CadastroPessoa_v1._0.Data;
 using CadastroPessoa_v1._0.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CadastroPessoa_v1._0.Controllers
 {
+    [Authorize]
     public class PessoaController : Controller
     {
         private readonly ApplicationDbContext _context;
 
         public PessoaController(ApplicationDbContext context)
         {
+
             _context = context;
         }
 
